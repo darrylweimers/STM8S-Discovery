@@ -15,4 +15,8 @@ Discovery kit with STM8S105C6 MCU
 - STM8S Discover board STM8S105C6 (http://www.st.com/en/evaluation-tools/stm8s-discovery.html)
 - STM8S/A Standard Peripheral (http://www.st.com/en/embedded-software/stsw-stm8069.html)
 
+## Set up IAR Workbench 
 
+1 - Choose your device/ micro-controller part number ( e.g. for our case: STM8S105C6)
+    
+2 - Link File Paths 
