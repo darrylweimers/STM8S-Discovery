@@ -20,5 +20,5 @@ Discovery kit with STM8S105C6 MCU
 1 - Choose your device/ micro-controller part number ( e.g. for our case: STM8S105C6)
 ![choose device](https://user-images.githubusercontent.com/30273976/33625334-3882e1ee-d9c5-11e7-8f18-41ded5111b7e.gif)
 
-2 - Link File Paths 
+2 - Link file paths 
 ![set file paths](https://user-images.githubusercontent.com/30273976/33625351-45d1f402-d9c5-11e7-824a-0179e0c4209f.gif)
