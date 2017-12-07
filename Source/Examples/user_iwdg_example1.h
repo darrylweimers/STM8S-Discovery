@@ -1,31 +1,26 @@
 //***********************************************
-// 	user_tim2.h
+//	user_iwdg_example1.h
 //***********************************************
 
-#ifndef _USER_TIM2_H_
-#define _USER_TIM2_H_
-
-/* *************************************************************************
- * STM8S Driver Includes
- * *************************************************************************
- */
-
-#include "stm8s.h"
+#ifndef _USER_IWDG_EXAMPLE1_H_
+#define _USER_IWDG_EXAMPLE1_H_
 
 /* *************************************************************************
  * DEFINES
  * *************************************************************************
  */
 
-// Brief:		General operations
-#define TIM2_CLEAR_STATUS_REGISTER_1()		TIM2->SR1 = 0
+/* *************************************************************************
+ * TYPES
+ * *************************************************************************
+ */
 
 /* *************************************************************************
  * PUBLIC FUNCTION DECLARATIONS
  * *************************************************************************
  */
 
-void user_tim2_Init(void);
-void user_tim2_Enable(FunctionalState NewState);
+void user_iwdg_example1_setup(void);
+void user_iwdg_example1_a_main(void);
 
-#endif // _USER_TIM2_H_
+#endif /* _USER_IWDG_EXAMPLE1_H_ */

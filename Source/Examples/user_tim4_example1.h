@@ -1,16 +1,15 @@
 //***********************************************
-//	user_iwdg.h
+//	user_tim4_example1.h
 //***********************************************
 
-#ifndef _USER_IWDG_H_
-#define _USER_IWDG_H_
+#ifndef _USER_TIM4_EXAMPLE1_H_
+#define _USER_TIM4_EXAMPLE1_H_
 
 /* *************************************************************************
  * PUBLIC FUNCTION DECLARATIONS
  * *************************************************************************
  */
+void user_tim4_example1_a_main(void);
+void user_tim4_example1_setup(void);
 
-void user_iwdg_Init(void);
-void user_iwdg_Reload(void);
-
-#endif /* _USER_IWDG_H_ */
+#endif /* _USER_TIM4_EXAMPLE1_H_ */

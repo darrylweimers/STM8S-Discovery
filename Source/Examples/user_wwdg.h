@@ -1,16 +1,17 @@
 //***********************************************
-//	user_iwdg.h
+//	user_wwdg.h
 //***********************************************
 
-#ifndef _USER_IWDG_H_
-#define _USER_IWDG_H_
+#ifndef _USER_WWDG_H_
+#define _USER_WWDG_H_
 
 /* *************************************************************************
  * PUBLIC FUNCTION DECLARATIONS
  * *************************************************************************
  */
 
-void user_iwdg_Init(void);
-void user_iwdg_Reload(void);
+void user_wwdg_CpuReset(void);
+void user_wwdg_Init(void);
+void user_wwdg_Reset(void);
 
-#endif /* _USER_IWDG_H_ */
+#endif /* _USER_WWDG_H_ */

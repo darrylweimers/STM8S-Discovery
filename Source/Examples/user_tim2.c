@@ -1,5 +1,5 @@
 //***********************************************
-// 	USER_TIM2.c
+// 	user_tim2.c
 //***********************************************
 
 /* *************************************************************************
@@ -31,10 +31,9 @@
  * *************************************************************************
  */
 
-// Brief:		Initialize using platforms setting
+// Brief:		Initialize using configuration setting
 // Param1:		Void
 // Return:		Void
-// Note:		1. SPK (PD4) send square wave (PWM) to buzzer
 void user_tim2_Init(void)
 {
   // TIM2 Peripheral Configuration

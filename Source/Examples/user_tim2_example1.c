@@ -1,23 +1,27 @@
 //***********************************************
-//	user_adc.h
+//	user_tim2_example1.c
 //***********************************************
-
-#ifndef _USER_ADC_H_
-#define _USER_ADC_H_
 
 /* *************************************************************************
  * User Includes
  * *************************************************************************
  */
 
-#include "user_globalDef.h"
+#include "user_tim2.h"
+#include "user_tim2_example1.h"
 
 /* *************************************************************************
- * PUBLIC FUNCTION DECLARATIONS
+ * PUBLIC FUNCTION DEFINITIONS
  * *************************************************************************
  */
 
-void user_adc_Init(void);
-U16 user_adc_GetResult(void);
+void user_tim2_example1_setup(void)
+{
+	user_tim2_Init();
+}
 
-#endif /* _USER_ADC_H_ */
+// Generates a 1Khz square wave at pin 29 (PD4)
+void user_tim2_example1_a_main(void)
+{
+	user_tim2_Enable(ENABLE);
+}
