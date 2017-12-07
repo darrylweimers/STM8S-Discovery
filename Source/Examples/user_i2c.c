@@ -1,5 +1,5 @@
 //***********************************************
-//	I2C.c
+//	user_i2c.c
 //***********************************************
 
 // IMPORTANT: Set option byte (bit AFR6 to alternate function) to enable I2C pins

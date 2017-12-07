@@ -1,23 +1,27 @@
 //***********************************************
-//	user_adc.h
+//	user_wwdg_example1.c
 //***********************************************
 
-#ifndef _USER_ADC_H_
-#define _USER_ADC_H_
 
 /* *************************************************************************
  * User Includes
  * *************************************************************************
  */
 
-#include "user_globalDef.h"
+#include "user_wwdg_example1.h"
+#include "user_wwdg.h"
 
 /* *************************************************************************
- * PUBLIC FUNCTION DECLARATIONS
+ * PUBLIC FUNCTION DEFINITIONS
  * *************************************************************************
  */
 
-void user_adc_Init(void);
-U16 user_adc_GetResult(void);
+void user_wwdg_example1_Init(void)
+{
 
-#endif /* _USER_ADC_H_ */
+}
+
+void user_wwdg_example1_a_main(void)
+{
+
+}

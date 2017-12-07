@@ -1,31 +1,29 @@
 //***********************************************
-// 	user_tim2.h
+// 	USER_GPIO_EXAMPLE_1.h
 //***********************************************
 
-#ifndef _USER_TIM2_H_
-#define _USER_TIM2_H_
+#ifndef _USER_GPIO_EXAMPLE_1_H_
+#define _USER_GPIO_EXAMPLE_1_H_
+
+/* *************************************************************************
+ * User Includes
+ * *************************************************************************
+ */
+
+#include "user_gpio.h"
 
 /* *************************************************************************
  * STM8S Driver Includes
  * *************************************************************************
  */
 
-#include "stm8s.h"
-
-/* *************************************************************************
- * DEFINES
- * *************************************************************************
- */
-
-// Brief:		General operations
-#define TIM2_CLEAR_STATUS_REGISTER_1()		TIM2->SR1 = 0
 
 /* *************************************************************************
  * PUBLIC FUNCTION DECLARATIONS
  * *************************************************************************
  */
 
-void user_tim2_Init(void);
-void user_tim2_Enable(FunctionalState NewState);
+void user_gpio_example1_a_main(void);
+void user_gpio_example1_setup(void);
 
-#endif // _USER_TIM2_H_
+#endif /* _USER_GPIO_EXAMPLE_1_H_ */

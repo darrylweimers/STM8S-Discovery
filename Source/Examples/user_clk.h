@@ -1,5 +1,5 @@
 //***********************************************
-// 	USER_CLK.h
+// 	user_clk.h
 //***********************************************
 
 #ifndef _USER_CLK_H_
@@ -32,9 +32,8 @@ typedef enum
  * *************************************************************************
  */
 
-void CLK_Init(void);
+void user_clk_Init(void);
 void CLK_Enable(CLK_Module Module, FunctionalState NewState);
-void CLK_PeripheralEnable(CLK_Peripheral_TypeDef CLK_Peripheral, FunctionalState NewState);
 
 
 #endif // _USER_CLK_H_

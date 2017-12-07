@@ -1,5 +1,5 @@
 //***********************************************
-// 	USER_TIM4.h
+// user_tim4.h
 //***********************************************
 
 #ifndef _USER_TIM4_H_
@@ -17,11 +17,11 @@
  */
 
 // Brief:		General operations
-#define TIM4_CLEAR_STATUS_REGISTER_1()	TIM4->SR1 = 0
-#define TIM4_GET_COUNTER_VALUE() 		TIM4->CNTR
-#define TIM4_RESET_COUNTER() 			TIM4->CNTR = 0
-#define TIM4_ENABLE()					TIM4->CR1 |= TIM4_CR1_CEN
-#define TIM4_DISABLE()					TIM4->CR1 &= (uint8_t)(~TIM4_CR1_CEN);
+#define USER_TIM4_CLEAR_STATUS_REGISTER_1()	TIM4->SR1 = 0
+#define USER_TIM4_GET_COUNTER_VALUE() 		TIM4->CNTR
+#define USER_TIM4_RESET_COUNTER() 			TIM4->CNTR = 0
+#define USER_TIM4_ENABLE()					TIM4->CR1 |= TIM4_CR1_CEN
+#define USER_TIM4_DISABLE()					TIM4->CR1 &= (uint8_t)(~TIM4_CR1_CEN);
 
 /* *************************************************************************
  * PUBLIC FUNCTION DECLARATIONS

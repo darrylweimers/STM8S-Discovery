@@ -1,16 +1,20 @@
 //***********************************************
-//	user_iwdg.h
+//	user_wwdg_example1.c
 //***********************************************
 
-#ifndef _USER_IWDG_H_
-#define _USER_IWDG_H_
+#include "user_wwdg_example1.h"
 
 /* *************************************************************************
- * PUBLIC FUNCTION DECLARATIONS
+ * PUBLIC FUNCTION DEFINITIONS
  * *************************************************************************
  */
 
-void user_iwdg_Init(void);
-void user_iwdg_Reload(void);
+void user_wwdg_example1_Init(void)
+{
 
-#endif /* _USER_IWDG_H_ */
+}
+
+void user_wwdg_example1_a_main(void)
+{
+
+}

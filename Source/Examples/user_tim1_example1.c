@@ -1,31 +1,41 @@
 //***********************************************
-// 	user_tim2.h
+//	user_tim1_example1.c
 //***********************************************
 
-#ifndef _USER_TIM2_H_
-#define _USER_TIM2_H_
-
 /* *************************************************************************
- * STM8S Driver Includes
+ * User Includes
  * *************************************************************************
  */
 
-#include "stm8s.h"
+#include "user_tim1.h"
+#include "user_tim1_example1.h"
 
 /* *************************************************************************
  * DEFINES
  * *************************************************************************
  */
 
-// Brief:		General operations
-#define TIM2_CLEAR_STATUS_REGISTER_1()		TIM2->SR1 = 0
+//Period = 16000 * 0.0625 us  = 1000 us
+#define MATCH_VALUE		16000
 
 /* *************************************************************************
- * PUBLIC FUNCTION DECLARATIONS
+ * PUBLIC FUNCTION DEFINITIONS
  * *************************************************************************
  */
 
-void user_tim2_Init(void);
-void user_tim2_Enable(FunctionalState NewState);
+void user_tim1_example1_setup(void)
+{
+	user_tim1_Init();
+}
 
-#endif // _USER_TIM2_H_
+// Delay for 1000 us
+void user_tim1_example1_a_main(void)
+{
+	USER_TIM1_RESET_COUNTER();
+	USER_TIM1_ENABLE();
+
+	// Delay for 1000 us
+	while(TIM1->CNTRL < MATCH_VALUE);	// wait until period 1000us
+
+	USER_TIM1_DISABLE();
+}

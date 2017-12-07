@@ -1,5 +1,5 @@
 //***********************************************
-//	USER_ADC.c
+//	user_adc.c
 //***********************************************
 
 /* *************************************************************************
@@ -23,13 +23,18 @@
 
 #define ADC_12_PORT					GPIOF
 #define ADC_12_PIN					GPIO_PIN_4
+#define CHANNEL						ADC1_CHANNEL_12
+#define MODE 						ADC1_CONVERSIONMODE_SINGLE
 
 /* *************************************************************************
  * PUBLIC FUNCTION DEFINITIONS
  * *************************************************************************
  */
 
-// 10 bits or max value = 0x3FF
+// Brief:		Initialize using configuration setting
+// Param1:		Void
+// Return:		Void
+// Note:		Max conversion resolution: 0x3FF
 void user_adc_Init(void)
 {
 	//  Initialize pin
@@ -39,14 +44,14 @@ void user_adc_Init(void)
 	ADC1_DeInit();
 
 	// Init ADC1 peripheral
-	ADC1_Init(ADC1_CONVERSIONMODE_SINGLE, ADC1_CHANNEL_12, ADC1_PRESSEL_FCPU_D2, \
+	ADC1_Init(MODE, CHANNEL, ADC1_PRESSEL_FCPU_D2, \
 			ADC1_EXTTRIG_TIM, DISABLE, ADC1_ALIGN_RIGHT, ADC1_SCHMITTTRIG_CHANNEL12,\
 			DISABLE);
 
 	ADC1_StartConversion();
 }
 
-U16 user_adc__GetResult(void)
+U16 user_adc_GetResult(void)
 {
   	ADC1_ConversionConfig(ADC1_CONVERSIONMODE_SINGLE, ADC1_CHANNEL_12, ADC1_ALIGN_RIGHT);
 
