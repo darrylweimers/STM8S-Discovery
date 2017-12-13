@@ -9,6 +9,7 @@
 
 #include "user_tim2.h"
 #include "user_tim2_example1.h"
+#include "user_clk.h"
 
 /* *************************************************************************
  * PUBLIC FUNCTION DEFINITIONS
@@ -17,6 +18,7 @@
 
 void user_tim2_example1_setup(void)
 {
+	user_clk_Init();
 	user_tim2_Init();
 }
 

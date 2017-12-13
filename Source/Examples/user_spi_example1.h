@@ -1,29 +1,24 @@
 //***********************************************
-//	user_tim3_example1.c
+//	user_spi_example1.h
 //***********************************************
 
+#ifndef _USER_SPI_EXAMPLE1_H_
+#define _USER_SPI_EXAMPLE1_H_
+
 /* *************************************************************************
- * User Includes
+ * DEFINES
  * *************************************************************************
  */
 
-#include "user_tim3.h"
-#include "user_tim3_example1.h"
-#include "user_clk.h"
-
 /* *************************************************************************
- * PUBLIC FUNCTION DEFINITIONS
+ * TYPES
  * *************************************************************************
  */
 
-void user_tim3_example1_setup(void)
-{
-	user_clk_Init();
-	user_tim3_Init();
-	enableInterrupts();
-}
+/* *************************************************************************
+ * PUBLIC FUNCTION DECLARATIONS
+ * *************************************************************************
+ */
+void user_spi_example1_Init(void);
 
-void user_tim3_example1_a_main(void)
-{
-	// Left black intetionally
-}
+#endif /* _USER_SPI_EXAMPLE1_H_ */

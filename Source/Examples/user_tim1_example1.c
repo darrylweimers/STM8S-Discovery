@@ -7,8 +7,9 @@
  * *************************************************************************
  */
 
-#include "user_tim1.h"
 #include "user_tim1_example1.h"
+#include "user_tim1.h"
+#include "user_clk.h"
 
 /* *************************************************************************
  * DEFINES
@@ -25,6 +26,7 @@
 
 void user_tim1_example1_setup(void)
 {
+	user_clk_Init();
 	user_tim1_Init();
 }
 
@@ -35,7 +37,7 @@ void user_tim1_example1_a_main(void)
 	USER_TIM1_ENABLE();
 
 	// Delay for 1000 us
-	while(TIM1->CNTRL < MATCH_VALUE);	// wait until period 1000us
+	while(TIM1_GetCounter() < MATCH_VALUE);	// wait until period 1000us
 
 	USER_TIM1_DISABLE();
 }

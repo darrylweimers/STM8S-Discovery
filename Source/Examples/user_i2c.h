@@ -56,17 +56,12 @@ typedef enum
  * *************************************************************************
  */
 
-U8 I2C_Read(void);
-void I2C_Send(U8 Data);
-FlagStatus I2C_GetStatus(I2C_Flag_TypeDef I2C_Flag);
-void I2C_GenerateStart(FunctionalState NewState);
-void I2C_GenerateStop(FunctionalState NewState);
-void I2C_DefaultConfig(void);
-void I2C_Enable(FunctionalState NewState);
-void I2C_InitConfig(void);
-void I2C_InterruptConfig(I2C_IT_TypeDef Config, FunctionalState NewState);
-void I2C_SlaveReceiverInterruptHanlder(void);
-bool I2C_ReadFrame(U8 Data[], U16* SizeOfData);
-I2C_Tx_Error I2C_SendFrame(U8 Address, U8 Data[], U16 SizeOfData, Func_Ptr_GetBool Timeout);
+
+void user_i2c_Enable(FunctionalState NewState);
+void user_i2c_Init(void);
+void user_i2c_InterruptConfig(I2C_IT_TypeDef Config, FunctionalState NewState);
+void user_i2c_SlaveReceiverInterruptHanlder(void);
+bool user_i2c_ReadFrame(U8 Data[], U16* SizeOfData);
+I2C_Tx_Error user_i2c_SendFrame(U8 Address, U8 Data[], U16 SizeOfData, Func_Ptr_GetBool Timeout);
 
 #endif /* _USER_I2C_H_ */

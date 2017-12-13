@@ -2141,7 +2141,7 @@
                 </file>
             </group>
             <group>
-                <name>i2c</name>
+                <name>I2C</name>
                 <file>
                     <name>$PROJ_DIR$\Source\Examples\user_i2c.c</name>
                 </file>
@@ -2168,6 +2168,21 @@
                 </file>
                 <file>
                     <name>$PROJ_DIR$\Source\Examples\user_iwdg_example1.h</name>
+                </file>
+            </group>
+            <group>
+                <name>SPI</name>
+                <file>
+                    <name>$PROJ_DIR$\Source\Examples\user_spi.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Source\Examples\user_spi.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Source\Examples\user_spi_example1.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\Source\Examples\user_spi_example1.h</name>
                 </file>
             </group>
             <group>
@@ -2233,20 +2248,29 @@
             <group>
                 <name>WWDG</name>
                 <file>
-                    <name>$PROJ_DIR$\Source\Examples\user_wwd.c</name>
+                    <name>$PROJ_DIR$\Source\Examples\user_wwdg.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\Source\Examples\user_wwd.h</name>
+                    <name>$PROJ_DIR$\Source\Examples\user_wwdg.h</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\Source\Examples\user_wwd_example1.c</name>
+                    <name>$PROJ_DIR$\Source\Examples\user_wwdg_example1.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\Source\Examples\user_wwd_example1.h</name>
+                    <name>$PROJ_DIR$\Source\Examples\user_wwdg_example1.h</name>
                 </file>
             </group>
             <file>
                 <name>$PROJ_DIR$\Source\Examples\user_globalDef.h</name>
+            </file>
+        </group>
+        <group>
+            <name>Interrupt Service Routine</name>
+            <file>
+                <name>$PROJ_DIR$\Source\stm8s_it.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Source\stm8s_it.h</name>
             </file>
         </group>
         <file>

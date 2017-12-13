@@ -10,6 +10,7 @@
 
 #include "user_tim4.h"
 #include "user_tim4_example1.h"
+#include "user_clk.h"
 
 /* *************************************************************************
  * DEFINES
@@ -26,6 +27,7 @@
 
 void user_tim4_example1_setup(void)
 {
+	user_clk_Init();
 	user_tim4_Init();
 }
 

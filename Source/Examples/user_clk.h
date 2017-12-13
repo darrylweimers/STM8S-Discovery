@@ -33,7 +33,5 @@ typedef enum
  */
 
 void user_clk_Init(void);
-void CLK_Enable(CLK_Module Module, FunctionalState NewState);
-
 
 #endif // _USER_CLK_H_

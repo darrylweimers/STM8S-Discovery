@@ -19,6 +19,6 @@
 
 void user_tim3_Init(void);
 void user_tim3_Enable(FunctionalState State);
-void user_tim3_ClearInterruptUpdateStatus(void);
+void user_tim3_InterruptHandler(void);
 
 #endif // _USER_TIM3_H_
