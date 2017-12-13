@@ -10,6 +10,7 @@
 
 #include "user_gpio.h"
 #include "user_gpio_example1.h"
+#include "user_clk.h"
 
 /* ******************************************************************
  * PUBLIC FUNCTION DEFINITIONS
@@ -17,6 +18,7 @@
 
 void user_gpio_example1_setup(void)
 {
+	user_clk_Init();
 	user_gpio_Init();
 }
 

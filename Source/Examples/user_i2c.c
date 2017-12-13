@@ -29,8 +29,6 @@
 #define I2C_MASTER_INTERRUPT_CONFIG						I2C_IT_ERR
 #define I2C_SLAVE_RX_BUFFER_SIZE						30
 
-
-
 // Brief:		Receiver flag status
 #define I2C_IN_RECEIVER_MODE() 				(I2C_GetFlagStatus(I2C_FLAG_TRANSMITTERRECEIVER) == RESET)
 #define I2C_IN_COMMUNICATION() 				(I2C_GetFlagStatus(I2C_FLAG_BUSBUSY) == SET)
@@ -60,73 +58,11 @@ static volatile bool newFrameReceived = FALSE;
  * *************************************************************************
  */
 
-// Brief:		Read a byte
-// Param1:		Void
-// Return:		Byte read
-U8 I2C_Read(void)
-{
-	return I2C_ReceiveData();
-}
-
-// Brief:		Write a byte
-// Param1:		Byte to write
-// Return:		Void
-void I2C_Send(U8 Data)
-{
-	I2C_SendData(Data);
-}
-
-// Brief:		Get status
-// Param1:		Flags:
-// 				-Transmit Data Register Empty flag
-// 				-Read Data Register Not Empty flag
-// 				-Stop detected flag
-// 				-10-bit Header sent flag
-// 				-Data Byte Transfer Finished flag
-// 				-Address Sent/Matched (master/slave) flag
-// 				-Start bit sent flag
-// 				-Wake Up From Halt Flag
-// 				-Overrun/Underrun flag
-// 				-Acknowledge Failure Flag
-// 				-Arbitration Loss Flag
-// 				-Misplaced Start or Stop condition
-// 				-General Call header received Flag
-// 				-Transmitter Receiver Flag
-// 				-Bus Busy Flag
-// 				-Master Slave Flag
-// Return:		Void
-FlagStatus I2C_GetStatus(I2C_Flag_TypeDef I2C_Flag)
-{
-	return I2C_GetFlagStatus(I2C_Flag);
-}
-
-// Brief:		Start condition
-// Param1: 		Enable/disable
-// Return:		Void
-void I2C_GenerateStart(FunctionalState NewState)
-{
-	I2C_GenerateSTART(NewState);
-}
-
-// Brief:		Stop condition
-// Param1: 		Enable/disable
-// Return:		Void
-void I2C_GenerateStop(FunctionalState NewState)
-{
-	I2C_GenerateSTOP(NewState);
-}
-
-// Brief:		Configure to default setting
-// Return:		Void
-void I2C_DefaultConfig(void)
-{
-	I2C_DeInit();
-}
 
 // Brief:		Enable/Disable peripheral
 // Param1: 		Enable/disable
 // Return:		Void
-void I2C_Enable(FunctionalState NewState)
+void user_i2c_Enable(FunctionalState NewState)
 {
 	I2C_Cmd(NewState);
 }
@@ -135,7 +71,7 @@ void I2C_Enable(FunctionalState NewState)
 // Param1:		Void
 // Return:		Void
 // Note:		1. Set option byte (bit AFR6 to alternate function) to enable I2C pins
-void I2C_InitConfig(void)
+void user_i2c_Init(void)
 {
 	// GPIO input mode, external interrupt disable, input with pull up
 	GPIO_Init(GPIOB, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT);
@@ -149,7 +85,7 @@ void I2C_InitConfig(void)
 // Brief:		Enable/Disable interrupt
 // Param1: 		Error/event/buffer
 // Param2: 		Enable/disable
-void I2C_InterruptConfig(I2C_IT_TypeDef Config, FunctionalState NewState)
+void user_i2c_InterruptConfig(I2C_IT_TypeDef Config, FunctionalState NewState)
 {
 	I2C_ITConfig(Config, NewState);
 }
@@ -162,7 +98,7 @@ void I2C_InterruptConfig(I2C_IT_TypeDef Config, FunctionalState NewState)
 // Return:		Transmit error (no error, communication line is busy, start condition not send, address not send, data byte not send, or last data byte not send)
 // Note:		1. Slave address bit 0 read/write bit indicator will be updated by this function
 //				2. timeout to terminate infinite waiting for a state
-I2C_Tx_Error I2C_SendFrame(U8 Address, U8 Data[], U16 SizeOfData, Func_Ptr_GetBool Timeout)
+I2C_Tx_Error user_i2c_SendFrame(U8 Address, U8 Data[], U16 SizeOfData, Func_Ptr_GetBool Timeout)
 {
 	U16 index = 0;
 
@@ -203,7 +139,7 @@ I2C_Tx_Error I2C_SendFrame(U8 Address, U8 Data[], U16 SizeOfData, Func_Ptr_GetBo
 	for (index = 0; index < SizeOfData; index++)
 	{
 		// byte transfer
-		I2C_Send(Data[index]);
+		I2C_SendData(Data[index]);
 
 		while(!I2C_TRANSCEIVER_DATA_SENT())
 		{
@@ -235,7 +171,7 @@ I2C_Tx_Error I2C_SendFrame(U8 Address, U8 Data[], U16 SizeOfData, Func_Ptr_GetBo
 // Param2:		Size of data which will be updated if return value is true
 // Return:		True/False (True, if frame is available)
 // Note:		Call slave receiver interrupt under I2C ISR
-bool I2C_ReadFrame(U8 Data[], U16* SizeOfData)
+bool user_i2c_ReadFrame(U8 Data[], U16* SizeOfData)
 {
 	U16 index = 0;
 
@@ -258,7 +194,7 @@ bool I2C_ReadFrame(U8 Data[], U16* SizeOfData)
 // Brief:		Slave interrupt handler
 // Param1:		Void
 // Return:		Void
-void I2C_SlaveReceiverInterruptHanlder(void)
+void user_i2c_SlaveReceiverInterruptHanlder(void)
 {
 	// Receiver mode
 	if (I2C_IN_RECEIVER_MODE())

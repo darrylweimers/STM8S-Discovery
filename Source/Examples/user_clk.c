@@ -32,7 +32,7 @@
 #define MODULE_SWITCHER_STATE						ENABLE						// No desire to switch between [internal low speed clock, internal high speed clock, external high speed clock]
 
 // Perihperal
-#define PERIPHERAL_SPI_STATE						DISABLE
+#define PERIPHERAL_SPI_STATE						ENABLE
 #define PERIPHERAL_I2C_STATE						ENABLE
 #define PERIPHERAL_ADC_STATE						ENABLE
 #define PERIPHERAL_AWU_STATE						DISABLE

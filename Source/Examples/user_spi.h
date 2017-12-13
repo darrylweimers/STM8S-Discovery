@@ -1,16 +1,18 @@
 //***********************************************
-//	user_i2c_example1.c
+//	user_spi.h
 //***********************************************
 
-#include "user_i2c_example1.h"
-#include "user_clk.h"
-#include "user_i2c.h"
+#ifndef _USER_SPI_H_
+#define _USER_SPI_H_
+
+#include "user_globalDef.h"
 
 /* *************************************************************************
- * PUBLIC FUNCTION DEFINITIONS
+ * PUBLIC FUNCTION DECLARATIONS
  * *************************************************************************
  */
-void user_i2c_example1_Init(void)
-{
+void user_spi_Init(void);
+U8 user_spi_Receive(void);
+U8 user_spi_Send(U8 Data);
 
-}
+#endif /* _USER_SPI_H_ */

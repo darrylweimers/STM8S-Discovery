@@ -3,6 +3,9 @@
 //***********************************************
 
 #include "user_iwdg_example1.h"
+#include "user_iwdg.h"
+#include "stm8s.h"
+#include "user_clk.h"
 
 /* *************************************************************************
  * DEFINES
@@ -24,6 +27,8 @@
 
 void user_iwdg_example1_Init(void)
 {
+	user_clk_Init();
+
 	// Check if the system has resumed from independent watchdog reset
 	if (RST->SR & RST_SR_IWDGF != RESET)
 	{
